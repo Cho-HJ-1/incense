@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>INCENSE FILM — 향수 리빌 포토 필름</title>
+  <meta name="description" content="향수를 뿌리면 사진이 나타나는 커플 전용 리빌 포토 필름 — 선착순 예약" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- 폰트는 로딩 실패해도 디자인이 깨지지 않게 구성 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f3efe7;
+      --paper:#f8f5ef;
+      --card:#fbfaf7;
+      --text:#1f1f1f;
+      --muted:#6d6a63;
+      --line:rgba(31,31,31,.08);
+      --shadow:0 12px 30px rgba(0,0,0,.06);
+      --shadow2:0 18px 45px rgba(0,0,0,.08);
+      --r:18px;
+      --r2:22px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(900px 420px at 25% -10%, rgba(255,255,255,.85), transparent 60%),
+        radial-gradient(900px 520px at 80% 0%, rgba(255,255,255,.75), transparent 65%),
+        var(--bg);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", "Apple SD Gothic Neo", Arial, sans-serif;
+      line-height:1.55;
+    }
+    .container{width:min(1120px,calc(100% - 48px));margin:0 auto}
+    .topbar{
+      position:sticky;top:0;z-index:20;
+      background:rgba(243,239,231,.88);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar__inner{
+      height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px;
+    }
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;letter-spacing:.22em}
+    .brand__name{font-size:14px;font-weight:500;opacity:.9}
+    .nav__pill{
+      display:flex;align-items:center;gap:6px;padding:8px;
+      background:rgba(255,255,255,.65);
+      border:1px solid var(--line);
+      border-radius:999px;
+      box-shadow:0 10px 30px rgba(0,0,0,.03);
+    }
+    .nav__btn{
+      border:0;background:transparent;cursor:pointer;
+      padding:10px 14px;border-radius:999px;
+      font-size:13px;color:rgba(31,31,31,.75);
+      transition:160ms ease;
+      white-space:nowrap;
+    }
+    .nav__btn:hover{background:rgba(0,0,0,.04);color:rgba(31,31,31,.88)}
+    .nav__btn.is-active{background:#1d1d1d;color:#fff}
+
+    .page{padding:38px 0 60px}
+    .eyebrow{letter-spacing:.28em;font-size:12px;color:rgba(31,31,31,.55);margin-bottom:10px}
+    .h1{
+      font-family:"Noto Serif KR", serif;
+      font-weight:700;letter-spacing:-.02em;line-height:1.12;
+      font-size:44px;margin:0 0 12px
+    }
+    .h2{
+      font-family:"Noto Serif KR", serif;
+      font-weight:700;font-size:30px;margin:0 0 14px
+    }
+    .lead{font-size:15px;color:rgba(31,31,31,.70);margin:0}
+    .muted{color:var(--muted)}
+    .tiny{font-size:12px}
+    .mt-8{margin-top:8px}.mt-10{margin-top:10px}.mt-12{margin-top:12px}
+    .mt-16{margin-top:16px}.mt-24{margin-top:24px}.mt-36{margin-top:36px}
+
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .chip{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:9px 12px;border-radius:999px;border:1px solid var(--line);
+      background:rgba(255,255,255,.55);
+      font-size:12.5px;color:rgba(31,31,31,.70)
+    }
+    .btn{
+      border:0;border-radius:999px;background:#1d1d1d;color:#fff;
+      padding:12px 16px;font-size:13px;font-weight:700;cursor:pointer;
+      transition:160ms ease;box-shadow:0 12px 26px rgba(0,0,0,.12)
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn:active{transform:translateY(0)}
+    .btn--ghost{
+      background:rgba(255,255,255,.65);
+      color:rgba(31,31,31,.86);
+      border:1px solid var(--line);
+      box-shadow:0 10px 24px rgba(0,0,0,.06)
+    }
+
+    .grid{display:grid;gap:18px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--r);
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+    .card--big{border-radius:var(--r2);padding:20px;box-shadow:var(--shadow2)}
+    .card__title{
+      font-family:"Noto Serif KR", serif;
+      font-weight:700;font-size:18px;margin:0 0 10px
+    }
+    .card__text{margin:0;color:rgba(31,31,31,.70);font-size:13.5px}
+    .bullet{margin:10px 0 0;padding-left:18px;color:rgba(31,31,31,.72);font-size:13.5px}
+    .notice{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.55);
+      padding:12px 14px;border-radius:14px;
+      font-size:13px;color:rgba(31,31,31,.72)
+    }
+
+    .product-head{
+      display:grid;
+      grid-template-columns:1.4fr 1fr;
+      gap:22px;
+      align-items:start;
+      padding-top:14px;
+    }
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+    .faq__list{display:grid;gap:12px}
+    .faq__item{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.55);
+      border-radius:16px;
+      padding:12px 14px;
+    }
+    .faq__item summary{cursor:pointer;font-weight:750;color:rgba(31,31,31,.82)}
+    .faq__item p{margin:10px 0 0;color:rgba(31,31,31,.70);font-size:13.5px}
+
+    .card--form{padding:22px;border-radius:22px}
+    .field{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+    label{font-weight:750;font-size:13px;color:rgba(31,31,31,.82)}
+    .req{color:#b12c2c}
+    input{
+      width:100%;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.65);
+      border-radius:14px;
+      padding:12px 14px;
+      font-size:14px;
+      outline:none;
+      transition:160ms ease;
+    }
+    input:focus{border-color:rgba(31,31,31,.22);box-shadow:0 0 0 4px rgba(31,31,31,.05)}
+    .error{margin:0;font-size:12px;color:#b12c2c;min-height:14px}
+    .policy-box{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.55);
+      border-radius:16px;
+      padding:14px;
+      color:rgba(31,31,31,.72);
+      font-size:13px;
+    }
+    .policy-box p{margin:8px 0}
+    .policy-box p:first-child{margin-top:0}
+    .policy-box p:last-child{margin-bottom:0}
+    .checks{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+    .check{display:flex;align-items:center;gap:10px;color:rgba(31,31,31,.78);font-size:13px}
+    .check input{width:16px;height:16px;border-radius:4px;padding:0;margin:0}
+
+    .footer{border-top:1px solid var(--line);padding:22px 0 30px}
+    .footer__inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-bottom:10px}
+
+    /* Modal */
+    .modal{position:fixed;inset:0;display:none;z-index:50}
+    .modal.is-open{display:block}
+    .modal__backdrop{position:absolute;inset:0;background:rgba(0,0,0,.28)}
+    .modal__panel{
+      position:relative;width:min(820px,calc(100% - 32px));
+      margin:8vh auto 0;background:var(--paper);
+      border:1px solid var(--line);border-radius:22px;
+      box-shadow:0 30px 80px rgba(0,0,0,.20);overflow:hidden
+    }
+    .modal__head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--line)}
+    .modal__title{font-weight:800;font-size:13px;letter-spacing:.02em}
+    .icon-btn{border:0;background:transparent;cursor:pointer;font-size:18px;padding:8px 10px;border-radius:12px}
+    .icon-btn:hover{background:rgba(0,0,0,.06)}
+    .modal__body{padding:16px}
+    .video-placeholder{
+      border:1px dashed rgba(31,31,31,.22);
+      background:rgba(255,255,255,.60);
+      border-radius:18px;
+      height:320px;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .video-placeholder__text{text-align:center;color:rgba(31,31,31,.65);font-size:13px;padding:0 18px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .product-head{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .h1{font-size:38px}
+      .topbar__inner{height:auto;padding:14px 0;flex-wrap:wrap}
+    }
+    @media (max-width:520px){
+      .container{width:calc(100% - 28px)}
+      .h1{font-size:34px}
+      .nav__pill{width:100%;justify-content:space-between}
+      .nav__btn{padding:10px 12px;font-size:12.5px}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#product" aria-label="INCENSE FILM 홈">
+        <span class="brand__name">INCENSE FILM</span>
+      </a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <div class="nav__pill">
+          <button class="nav__btn" data-tab="brand" type="button">브랜드 소개</button>
+          <button class="nav__btn is-active" data-tab="product" type="button">상품 소개</button>
+          <button class="nav__btn" data-tab="reserve" type="button">상품 예약</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- BRAND -->
+    <section class="page" data-page="brand" hidden>
+      <div class="eyebrow">BRAND</div>
+      <h1 class="h1">추억을 향기로 남기다</h1>
+      <p class="lead">
+        우리는 <b>향</b>과 <b>사진</b>을 결합해, 기념일의 순간을 더 특별하게 만드는
+        작은 “리빌 경험”을 만듭니다.
+      </p>
+      <div class="chips">
+        <span class="chip">감성 선물</span>
+        <span class="chip">리빌 경험</span>
+        <span class="chip">커플 전용</span>
+      </div>
+
+      <div class="grid grid-2 mt-24">
+        <article class="card">
+          <h3 class="card__title">미션</h3>
+          <p class="card__text">
+            평범한 선물이 아닌, <b>같이 웃고 놀랄 수 있는 순간</b>을 선물합니다.
+            향수를 뿌리는 순간, 숨겨진 사진이 천천히 드러나는 경험을 통해
+            기억을 “행동”으로 남기게 합니다.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3 class="card__title">제품 철학</h3>
+          <p class="card__text">
+            과한 장식 대신, 촉감·빛·향의 조합으로
+            <b>고급스럽고 조용한 설렘</b>을 전달합니다.
+            얼굴 노출이 부담 없는 <b>뒷모습 사진</b>을 추천합니다.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3 class="card__title">제작 방식</h3>
+          <p class="card__text">
+            위탁 생산 파트너와 함께 제작하며, 기본적인 품질 기준(인쇄/코팅/오염/스크래치)을
+            바탕으로 검수합니다. (본 사이트는 현재 <b>예약 단계</b>입니다.)
+          </p>
+        </article>
+
+        <article class="card">
+          <h3 class="card__title">문의</h3>
+          <p class="card__text">협업·제휴·대량 제작 문의는 아래 버튼을 눌러 주세요.</p>
+          <div class="cta-row mt-16">
+            <a class="btn" href="mailto:hello@incensefilm.example" rel="nofollow">이메일 문의</a>
+            <button class="btn btn--ghost" type="button" id="copyContact">연락처 복사</button>
+          </div>
+          <p class="tiny muted mt-8">※ hello@incensefilm.example 은 예시입니다. 실제 이메일로 변경하세요.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRODUCT -->
+    <section class="page" data-page="product">
+      <div class="product-head">
+        <div>
+          <div class="eyebrow">PRODUCT</div>
+          <h1 class="h1">향수 리빌 포토 필름 – 커플 2장<br/>세트</h1>
+          <p class="lead">향수를 뿌리면 사진이 나타나는 커플 전용 리빌 필름</p>
+
+          <div class="chips">
+            <span class="chip">10×15cm</span>
+            <span class="chip">필름 2장</span>
+            <span class="chip">커플 세트</span>
+            <span class="chip">발렌타인데이 주간 도착 목표(±3일)</span>
+          </div>
+
+          <p class="muted mt-12">얼굴 노출 없는 뒷모습 사진을 추천합니다.</p>
+
+          <div class="cta-row mt-16">
+            <button class="btn" type="button" data-go="reserve">예약하기</button>
+            <button class="btn btn--ghost" type="button" id="openDemo">리빌 영상(데모) 자리</button>
+          </div>
+          <p class="tiny muted mt-8">※ 영상은 나중에 실제 릴스 링크/임베드로 교체하세요.</p>
+        </div>
+
+        <aside class="card card--big">
+          <h3 class="card__title">상품 구성</h3>
+          <ul class="bullet">
+            <li>10×15cm 리빌 필름 2장 (커플 세트)</li>
+            <li>향수 분사 안내 카드</li>
+            <li>보관용 하드 슬리브</li>
+          </ul>
+          <div class="notice mt-16">
+            제작은 예약 선정 후 진행됩니다. 결제는 선정자에게만 안내됩니다.
+          </div>
+        </aside>
+      </div>
+
+      <div class="grid grid-3 mt-24">
+        <article class="card">
+          <h3 class="card__title">배송</h3>
+          <p class="card__text">발렌타인데이 주간 도착 목표(±3일)</p>
+        </article>
+        <article class="card">
+          <h3 class="card__title">리빌 경험</h3>
+          <p class="card__text">향수를 뿌리면 사진이 천천히 드러납니다.</p>
+        </article>
+        <article class="card">
+          <h3 class="card__title">사진 가이드</h3>
+          <p class="card__text">얼굴 노출 없는 뒷모습 사진을 추천합니다.</p>
+        </article>
+      </div>
+
+      <section class="mt-36">
+        <h2 class="h2">FAQ</h2>
+        <div class="faq__list">
+          <details class="faq__item" open>
+            <summary>향 없이도 되나요?</summary>
+            <p>가능합니다. 고객이 가진 향수로 뿌려도 리빌은 동작합니다.</p>
+          </details>
+          <details class="faq__item">
+            <summary>사진은 어떻게/언제 제출하나요?</summary>
+            <p>현재는 예약만 받습니다. 선정(당첨)된 분께 결제/사진 제출 링크를 안내드립니다.</p>
+          </details>
+          <details class="faq__item">
+            <summary>언제 도착하나요?</summary>
+            <p>발렌타인데이 주간 도착을 목표로 하며, 배송 오차 ±3일을 안내드립니다.</p>
+          </details>
+          <details class="faq__item">
+            <summary>한 번만 보이나요?</summary>
+            <p>건조되면 다시 옅어질 수 있고, 다시 분사하면 다시 드러납니다. (환경/분사량에 따라 달라질 수 있어요.)</p>
+          </details>
+          <details class="faq__item">
+            <summary>예약 취소는 가능한가요?</summary>
+            <p>예약 단계에서는 언제든지 취소를 요청할 수 있습니다. (결제 전)</p>
+          </details>
+          <details class="faq__item">
+            <summary>불량이면 어떻게 하나요?</summary>
+            <p>수령 직후 상태를 확인해 주세요. 파손/불량은 확인 후 재발송 또는 안내된 기준에 따라 처리됩니다.</p>
+          </details>
+        </div>
+      </section>
+    </section>
+
+    <!-- RESERVE -->
+    <section class="page" data-page="reserve" hidden>
+      <div class="eyebrow">RESERVE</div>
+      <h1 class="h1">선착순 100명 예약</h1>
+
+      <div class="chips mt-10">
+        <span class="chip">선착순 100명 한정</span>
+        <span class="chip">남은 좌석 <b id="remainingSeats">100</b>명</span>
+      </div>
+
+      <p class="lead mt-12">
+        지금은 예약만 받습니다. (결제 없음)<br/>
+        예약 후, 선정(당첨)된 분께만 결제/사진제출 링크를 안내드립니다.<br/>
+        선정되지 않은 경우 별도 결제는 진행되지 않습니다.
+      </p>
+
+      <section class="card card--form mt-24" aria-label="예약 폼">
+        <form id="reserveForm">
+          <div class="field">
+            <label for="name">이름 <span class="req">*</span></label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+            <p class="error" data-error-for="name"></p>
+          </div>
+
+          <div class="field">
+            <label for="phone">휴대폰 번호 <span class="req">*</span></label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="010-0000-0000" autocomplete="tel" required />
+            <p class="error" data-error-for="phone"></p>
+          </div>
+
+          <div class="field">
+            <label for="email">이메일 (선택)</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" />
+            <p class="error" data-error-for="email"></p>
+          </div>
+
+          <div class="policy-box">
+            <p>예약은 결제가 포함되지 않습니다.</p>
+            <p>예약 후 선정(당첨)된 분께만 결제/사진 제출 링크를 안내드립니다.</p>
+            <p>예약 단계에서는 언제든지 취소를 요청할 수 있습니다.</p>
+            <p>결제 및 사진 제출 이후에는 맞춤 제작 특성상 취소/환불이 제한될 수 있으며, 해당 단계에서 별도 고지 및 동의를 받습니다.</p>
+          </div>
+
+          <div class="checks">
+            <label class="check">
+              <input type="checkbox" id="consentPrivacy" required />
+              <span>개인정보 수집·이용 동의(필수)</span>
+            </label>
+            <label class="check">
+              <input type="checkbox" id="consentPolicy" required />
+              <span>예약 정책 동의(필수)</span>
+            </label>
+          </div>
+
+          <div class="cta-row mt-16">
+            <button class="btn" type="submit">예약 접수</button>
+            <button class="btn btn--ghost" type="button" id="resetBtn">입력 초기화</button>
+          </div>
+
+          <p class="tiny muted mt-10">
+            ※ 현재 파일은 “프론트 단일 HTML”입니다. 실제 운영에서는 제출 데이터를
+            구글폼/타입폼/백엔드로 연결해 주세요.
+          </p>
+        </form>
+      </section>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="muted tiny">© INCENSE FILM. All rights reserved.</div>
+        <div class="muted tiny">단일 HTML MVP (서버 없이 실행 가능)</div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="demoModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close="1"></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-label="리빌 영상 데모">
+      <div class="modal__head">
+        <div class="modal__title">리빌 영상 (데모 자리)</div>
+        <button class="icon-btn" type="button" aria-label="닫기" data-close="1">✕</button>
+      </div>
+      <div class="modal__body">
+        <div class="video-placeholder">
+          <div class="video-placeholder__text">
+            여기에 실제 릴스/유튜브 임베드 또는 MP4를 넣으세요.<br/>
+            (예: &lt;iframe&gt; 또는 &lt;video controls&gt;)
+          </div>
+        </div>
+        <div class="cta-row mt-12">
+          <button class="btn btn--ghost" type="button" data-close="1">닫기</button>
+          <button class="btn" type="button" data-go="reserve">예약하러 가기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const navButtons = Array.from(document.querySelectorAll('.nav__btn'));
+      const pages = Array.from(document.querySelectorAll('[data-page]'));
+      const remainingEl = document.getElementById('remainingSeats');
+
+      // 데모: 남은 좌석 (로컬스토리지)
+      const LIMIT = 100;
+      const KEY = 'incensefilm_demo_count';
+      const getCount = () => {
+        const v = Number(localStorage.getItem(KEY) || '0');
+        return Number.isFinite(v) ? v : 0;
+      };
+      const setCount = (v) => localStorage.setItem(KEY, String(Math.max(0, Math.min(LIMIT, v))));
+      const updateRemaining = () => {
+        if (!remainingEl) return;
+        remainingEl.textContent = String(Math.max(0, LIMIT - getCount()));
+      };
+
+      function setActiveTab(tab){
+        navButtons.forEach(b => b.classList.toggle('is-active', b.dataset.tab === tab));
+        pages.forEach(p => { p.hidden = (p.dataset.page !== tab); });
+        history.replaceState(null, '', '#' + tab);
+        window.scrollTo({top:0, behavior:'smooth'});
+      }
+
+      navButtons.forEach(btn => btn.addEventListener('click', () => setActiveTab(btn.dataset.tab)));
+      document.querySelectorAll('[data-go]').forEach(el => el.addEventListener('click', () => setActiveTab(el.dataset.go)));
+
+      // initial
+      const initial = (location.hash || '#product').replace('#','');
+      const valid = new Set(['brand','product','reserve']);
+      setActiveTab(valid.has(initial) ? initial : 'product');
+
+      // form
+      updateRemaining();
+      const form = document.getElementById('reserveForm');
+      const resetBtn = document.getElementById('resetBtn');
+
+      function setError(name, msg){
+        const el = document.querySelector('[data-error-for="'+name+'"]');
+        if (el) el.textContent = msg || '';
+      }
+      function validatePhone(phone){
+        const cleaned = String(phone||'').trim();
+        return /^01[016789]-?\d{3,4}-?\d{4}$/.test(cleaned);
+      }
+
+      resetBtn?.addEventListener('click', () => {
+        form?.reset();
+        ['name','phone','email'].forEach(k => setError(k,''));
+      });
+
+      form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if (getCount() >= LIMIT){
+          alert('현재 선착순 예약이 마감되었습니다.');
+          updateRemaining();
+          return;
+        }
+
+        const fd = new FormData(form);
+        const name = String(fd.get('name')||'').trim();
+        const phone = String(fd.get('phone')||'').trim();
+        const email = String(fd.get('email')||'').trim();
+
+        setError('name',''); setError('phone',''); setError('email','');
+        let ok = true;
+
+        if (!name){ setError('name','이름을 입력해 주세요.'); ok = false; }
+        if (!validatePhone(phone)){ setError('phone','휴대폰 번호 형식을 확인해 주세요. (예: 010-0000-0000)'); ok = false; }
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ setError('email','이메일 형식을 확인해 주세요.'); ok = false; }
+
+        const c1 = document.getElementById('consentPrivacy')?.checked;
+        const c2 = document.getElementById('consentPolicy')?.checked;
+        if (!c1 || !c2){ alert('필수 동의 항목을 체크해 주세요.'); ok = false; }
+
+        if (!ok) return;
+
+        const seq = getCount() + 1;
+        setCount(seq);
+        updateRemaining();
+
+        const rid = 'R' + String(Date.now()).slice(-8) + '-' + String(seq).padStart(3,'0');
+        localStorage.setItem('incensefilm_last_reservation_demo', JSON.stringify({
+          rid, seq, name, phone, email, createdAt: new Date().toISOString()
+        }));
+
+        form.reset();
+        alert('예약이 접수되었습니다.\n예약번호: ' + rid + '\n순번: ' + seq + ' / ' + LIMIT);
+      });
+
+      // modal
+      const modal = document.getElementById('demoModal');
+      const openDemo = document.getElementById('openDemo');
+      const openModal = () => { modal?.classList.add('is-open'); modal?.setAttribute('aria-hidden','false'); };
+      const closeModal = () => { modal?.classList.remove('is-open'); modal?.setAttribute('aria-hidden','true'); };
+      openDemo?.addEventListener('click', openModal);
+      modal?.addEventListener('click', (e) => {
+        const t = e.target;
+        if (t && t.getAttribute && t.getAttribute('data-close') === '1') closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal?.classList.contains('is-open')) closeModal();
+      });
+
+      // copy
+      document.getElementById('copyContact')?.addEventListener('click', async () => {
+        const text = 'hello@incensefilm.example';
+        try{ await navigator.clipboard.writeText(text); alert('연락처가 복사되었습니다: ' + text); }
+        catch{ alert('복사 실패: ' + text); }
+      });
+    })();
+  </script>
+</body>
+</html>
